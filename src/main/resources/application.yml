@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: forexbuddy
+  datasource:
+    url: jdbc:postgresql://localhost:5432/forex_buddy
+    username: test
+    password: test
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+
+clients:
+  forex:
+    base-url: https://api.exchangeratesapi.io/v1/
+    access-key: ${FOREX_ACCESS_KEY} # 9c53351bd9eecc82fbeee82aa6ebbd12
+
+
+scheduler:
+  forex:
+    rate: 3600000 # an hour

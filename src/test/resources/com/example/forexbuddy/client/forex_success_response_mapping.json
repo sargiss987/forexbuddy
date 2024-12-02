@@ -1,0 +1,32 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPath": "/v1/latest",
+    "queryParameters": {
+      "base": {
+        "equalTo": "EUR"
+      },
+      "access_key": {
+        "equalTo": "valid-access-key"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "success": true,
+      "timestamp": 1733062875,
+      "base": "EUR",
+      "date": "2024-12-01",
+      "rates": {
+        "AED": 3.885787,
+        "AFN": 71.80765,
+        "ALL": 98.239422,
+        "AMD": 418.169843
+      }
+    }
+  }
+}

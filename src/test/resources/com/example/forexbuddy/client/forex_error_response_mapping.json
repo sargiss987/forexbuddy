@@ -1,0 +1,17 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPath": "/v1/latest",
+    "queryParameters": {
+      "base": {
+        "equalTo": "EUR"
+      },
+      "access_key": {
+        "equalTo": "invalid-access-key"
+      }
+    }
+  },
+  "response": {
+    "status": 401
+  }
+}

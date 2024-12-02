@@ -1,0 +1,62 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: Sargis
+      changes:
+        - createTable:
+            tableName: currencies
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+              - column:
+                  name: name
+                  type: varchar(255)
+              - column:
+                  name: supported
+                  type: boolean
+        - addUniqueConstraint:
+            columnNames: name
+            tableName: currencies
+            constraintName: uq_currencies_name
+        - createTable:
+            tableName: supported_currencies
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+              - column:
+                  name: name
+                  type: varchar(255)
+        - addUniqueConstraint:
+            columnNames: name
+            tableName: supported_currencies
+            constraintName: uq_supported_currencies_name
+        - createTable:
+            tableName: exchange_rates
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+              - column:
+                  name: base_currency
+                  type: varchar(255)
+              - column:
+                  name: target_currency
+                  type: varchar(255)
+              - column:
+                  name: rate
+                  type: numeric(19, 6)
+              - column:
+                  name: timestamp
+                  type: timestamp
+
+        - insert:
+            tableName: supported_currencies
+            columns:
+              - column:
+                  name: name
+                  value: 'EUR'
